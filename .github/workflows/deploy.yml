@@ -31,6 +31,6 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "dirty-dove-43"
+          project: "esbuild-template"
           entrypoint: "main.ts"
           root: "."

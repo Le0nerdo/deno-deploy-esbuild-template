@@ -22,9 +22,8 @@ jobs:
         with:
           node-version: lts/*
 
-      - name: Build step
-        run: npm install --save-exact esbuild
-        run: ./node_modules/.bin/esbuild ./src/frontend.ts --bundle --outfile=./static/script.js
+      - name: Build using esbuild
+        run: npm install --save-exact esbuild && ./node_modules/.bin/esbuild ./src/frontend.ts --bundle --outfile=./static/script.js
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1

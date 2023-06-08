@@ -1,0 +1,17 @@
+{
+	"tasks": {
+		"watch": "deno task backend & deno task dev_compile",
+		"backend": "deno run --watch=./src/,.main.ts --allow-net=0.0.0.0:8000 --allow-read=./static/ main.ts",
+		"dev_compile": "deno run --watch=./src/ --allow-read=./src/,$PWD --allow-net=deno.land --allow-write=./static/script.js dev_compile.ts"
+	},
+	"compilerOptions": {
+		"target": "esnext",
+		"lib": ["dom", "dom.iterable", "dom.asynciterable", "deno.ns"]
+	},
+	"lint": {
+		"files": {
+			"include": ["src/", "main.ts"],
+			"exclude": ["static/"]
+		}
+	}
+}

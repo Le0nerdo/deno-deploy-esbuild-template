@@ -10,8 +10,8 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     permissions:
-      id-token: write # Needed for auth with Deno Deploy
-      contents: read # Needed to clone the repository
+      id-token: write
+      contents: read
 
     steps:
       - name: Clone repository
@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: lts/*
 
-      - name: Build using esbuild
+      - name: Build frontend using esbuild
         run: npm install esbuild && ./node_modules/.bin/esbuild ./src/frontend.ts --bundle --outfile=./static/script.js
 
       - name: Run Javascript Obfuscator
@@ -31,6 +31,6 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "esbuild-template"
+          project: "esbuild-template" # Change to your project name
           entrypoint: "main.ts"
           root: "."

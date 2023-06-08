@@ -5,5 +5,4 @@ A template for a project that builds a frontend using esbuild and can run throug
 Clone the repository and connect it to a deno project. You need to edit the project name in deploy.yml to correspont your project.
 
 ## TODO
-* obfuscator options
 * development mode

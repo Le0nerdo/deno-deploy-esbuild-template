@@ -1,5 +1,5 @@
 module.exports = {
-    compact: false,
+    compact: true,
     controlFlowFlattening: false,
     controlFlowFlatteningThreshold: 0.75,
     deadCodeInjection: false,

@@ -23,7 +23,10 @@ jobs:
           node-version: lts/*
 
       - name: Build using esbuild
-        run: npm install --save-exact esbuild && ./node_modules/.bin/esbuild ./src/frontend.ts --bundle --outfile=./static/script.js
+        run: npm install esbuild && ./node_modules/.bin/esbuild ./src/frontend.ts --bundle --outfile=./static/script.js
+
+      - name: Run Javascript Obfuscator
+        run: npm install javascript-obfuscator && javascript-obfuscator ./static/script.js --output ./static/script.js
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1

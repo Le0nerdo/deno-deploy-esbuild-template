@@ -1,4 +1,4 @@
-const divElement: HTMLDivElement = document.createElement("div")
-divElement.innerHTML = "Hello World"
+import { helloWorld } from "./helloWorld.ts";
 
-document.body.appendChild(divElement)
+const body = document.body
+helloWorld(body)

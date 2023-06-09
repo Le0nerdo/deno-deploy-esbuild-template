@@ -10,5 +10,6 @@ deno task watch
 ``` 
 
 ## TODO
+* make sure that deno imports deploy correctly (esbuild works)
 * Proper readme
 * add some description and a link to github to webpage
